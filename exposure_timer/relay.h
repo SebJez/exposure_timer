@@ -30,6 +30,7 @@ public:
 Relay::Relay(int pin) : pin_(pin)
 {
     pinMode(pin_,OUTPUT);
+    this->off();
 }
 
 inline void Relay::on() const
