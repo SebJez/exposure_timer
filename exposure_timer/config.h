@@ -1,5 +1,5 @@
-#ifndef pinout_h
-#define pinout_h
+#ifndef config_h
+#define config_h
 
 //----------------------CONFIG-------
     #define P_ENC_A A2

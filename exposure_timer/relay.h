@@ -1,6 +1,6 @@
 #ifndef relay_h
 #define relay_h
-#include "pinout.h"
+#include "config.h"
 
 
     #ifdef RELAY_ACTIVE_ON_LOW
