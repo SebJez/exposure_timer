@@ -1,6 +1,12 @@
+#ifndef lcd_h
+#define lcd_h
+
 #include <LiquidCrystal.h>
 #include "pinout.h"
 
+namespace lcd
+{
+  
 namespace characters
 {
     byte zero[8] = {0,0,0,0,0,0,0,0};
@@ -21,23 +27,28 @@ namespace characters
     }
 } // namespace characters
 
-LiquidCrystal lcd(P_LCD_RS,P_LCD_EN,P_LCD_D4,P_LCD_D5,P_LCD_D6,P_LCD_D7);
+LiquidCrystal display(P_LCD_RS,P_LCD_EN,P_LCD_D4,P_LCD_D5,P_LCD_D6,P_LCD_D7);
 
-lcd.createChar(0,characters::zero);
-lcd.createChar(1,characters::one);
-lcd.createChar(2,characters::two);
-lcd.createChar(3,characters::three);
-lcd.createChar(4,characters::four);
-lcd.createChar(5,characters::five);
-lcd.createChar(6,characters::l);
+display.createChar(0,characters::zero);
+display.createChar(1,characters::one);
+display.createChar(2,characters::two);
+display.createChar(3,characters::three);
+display.createChar(4,characters::four);
+display.createChar(5,characters::five);
+display.createChar(6,characters::l);
 
 void bar(float value)
 {
     int bars = value*80;
     if(bars < 0) bars = 0;
     else if(bars > 80) bars =80;
-    lcd.setCursor(1,0);
+    display.setCursor(1,0);
     for(int i = 0; i < bars/5; i++)
-        lcd.write(byte(5));
-    lcd.write(byte(bars%5));
-}
+        display.write(byte(5));
+    display.write(byte(bars%5));
+}  
+} // namespace lcd
+
+
+
+#endif

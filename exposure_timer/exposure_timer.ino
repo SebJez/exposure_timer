@@ -2,6 +2,7 @@
 
 #include "pinout.h"
 #include "lcd.h"
+#include "relay.h"
 
 volatile bool timer = false;
 

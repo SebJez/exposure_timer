@@ -23,12 +23,5 @@
 
  /////////////////////////////////////   
 
-    #ifdef RELAY_ACTIVE_ON_LOW
-        #define REL_ON LOW
-        #define REL_OFF HIGH
-    #else
-        #define REL_ON HIGH
-        #define REL_OFF LOW
-    #endif
 
 #endif
